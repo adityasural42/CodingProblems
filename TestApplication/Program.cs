@@ -110,6 +110,23 @@ namespace TestApplication
             }
             return minDist;
         }
+        public static List<int> permutationEquation(List<int> p)
+        {
+            var dict = new Dictionary<int, int>();
+            var x = 1;
+            foreach (var pi in p)
+            {
+                dict.Add(pi, x);
+                x++;
+            }
+            var res = new List<int>();
+            var pArr = p.ToArray();
+            for (int i = 1; i <= p.Count(); i++)
+            {
+                res.Add(dict[dict[i]]);
+            }
+            return res;
+        }
     }
 
 
