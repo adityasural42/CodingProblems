@@ -127,6 +127,27 @@ namespace TestApplication
             }
             return res;
         }
+        public static long repeatedString(string s, long n)
+        {
+            var finalChar = n % s.Count();
+            var repeats = n / s.Count();
+            long asCount = 0;
+            long remainas = 0;
+            long i = 0;
+            foreach (var a in s)
+            {
+                if (a == 'a')
+                {
+                    asCount++;
+                    if (i < finalChar)
+                    {
+                        remainas++;
+                    }
+                }
+                i++;
+            }
+            return (repeats * asCount) + remainas;
+        }
     }
 
 
