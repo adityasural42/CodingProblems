@@ -148,6 +148,34 @@ namespace TestApplication
             }
             return (repeats * asCount) + remainas;
         }
+        public static List<int> matchingStrings(List<string> stringList, List<string> queries)
+        {
+            var dict = new Dictionary<string, int>();
+            var res = new List<int>();
+            foreach (var s in stringList)
+            {
+                if (dict.ContainsKey(s))
+                {
+                    dict[s] += 1;
+                }
+                else
+                {
+                    dict.Add(s, 1);
+                }
+            }
+            foreach (var q in queries)
+            {
+                if (dict.ContainsKey(q))
+                {
+                    res.Add(dict[q]);
+                }
+                else
+                {
+                    res.Add(0);
+                }
+            }
+            return res;
+        }
     }
 
 
