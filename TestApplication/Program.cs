@@ -176,6 +176,21 @@ namespace TestApplication
             }
             return res;
         }
+        public static List<int> rotateLeft(int d, List<int> arr)
+        {
+            var a = arr.ToArray();
+            var res = new int[a.Count()];
+            for (int i = 0; i < a.Count(); i++)
+            {
+                res[i] = a[d];
+                d++;
+                if (d == a.Count())
+                {
+                    d = 0;
+                }
+            }
+            return res.ToList();
+        }
     }
 
 
