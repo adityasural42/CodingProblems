@@ -225,6 +225,25 @@ namespace TestApplication
             } while (currentCloud != 0);
             return energy;
         }
+        public static int designerPdfViewer(List<int> h, string word)
+        {
+            var initialChar = 'a';
+            var dict = new Dictionary<char, int>();
+            foreach (var hIn in h)
+            {
+                dict.Add(initialChar, hIn);
+                initialChar++;
+            }
+            var max = 0;
+            foreach (var c in word)
+            {
+                if (dict[c] > max)
+                {
+                    max = dict[c];
+                }
+            }
+            return word.Count() * max;
+        }
     }
 
 
