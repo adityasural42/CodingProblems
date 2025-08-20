@@ -191,6 +191,40 @@ namespace TestApplication
             }
             return res.ToList();
         }
+
+        public static List<int> reverseArray(List<int> a)
+        {
+            var aArr = a.ToArray();
+            var res = new int[aArr.Count()];
+            for (int i = aArr.Count() - 1; i >= 0; i--)
+            {
+                res[res.Count() - i - 1] = aArr[i];
+            }
+            return res.ToList();
+        }
+
+        static int jumpingOnClouds(int[] c, int k)
+        {
+
+            var currentCloud = 0;
+            var energy = 100;
+
+            do
+            {
+                currentCloud += k;
+                if (currentCloud > c.Count() - 1)
+                {
+                    currentCloud = currentCloud % c.Count();
+                }
+                energy--;
+                if (c[currentCloud] == 1)
+                {
+                    energy -= 2;
+                }
+
+            } while (currentCloud != 0);
+            return energy;
+        }
     }
 
 
