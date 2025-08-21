@@ -257,6 +257,35 @@ namespace TestApplication
             }
             return totalChocolates;
         }
+        public static int jumpingOnClouds(List<int> c)
+        {
+            var cArr = c.ToArray();
+            var jumps = 0;
+            var cloudIndex = 0;
+            while (cloudIndex <= cArr.Count() - 3)
+            {
+                if (cArr[cloudIndex + 1] != 0)
+                {
+                    jumps++;
+                    cloudIndex += 2;
+                }
+                else if (cArr[cloudIndex + 2] != 0)
+                {
+                    jumps++;
+                    cloudIndex += 1;
+                }
+                else
+                {
+                    jumps++;
+                    cloudIndex += 2;
+                }
+            }
+            if (cloudIndex == cArr.Count() - 2)
+            {
+                jumps++;
+            }
+            return jumps;
+        }
     }
 
 
