@@ -244,6 +244,19 @@ namespace TestApplication
             }
             return word.Count() * max;
         }
+        public static int chocolateFeast(int n, int c, int m)
+        {
+            var wrappers = n / c;
+            var totalChocolates = wrappers;
+            while (wrappers >= m)
+            {
+                var currentChocs = wrappers / m;
+                totalChocolates += currentChocs;
+                wrappers -= m * currentChocs;
+                wrappers += currentChocs;
+            }
+            return totalChocolates;
+        }
     }
 
 
