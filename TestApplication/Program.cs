@@ -297,6 +297,26 @@ namespace TestApplication
             }
             return likes;
         }
+        public static void countApplesAndOranges(int s, int t, int a, int b, List<int> apples, List<int> oranges)
+        {
+            int appCount = 0, oraCount = 0;
+            foreach (var app in apples)
+            {
+                if (app + a >= s && app + a <= t)
+                {
+                    appCount++;
+                }
+            }
+            foreach (var ora in oranges)
+            {
+                if (ora + b >= s && ora + b <= t)
+                {
+                    oraCount++;
+                }
+            }
+            Console.WriteLine(appCount);
+            Console.WriteLine(oraCount);
+        }
     }
 
 
