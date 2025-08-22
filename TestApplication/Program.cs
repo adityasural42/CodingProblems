@@ -286,6 +286,17 @@ namespace TestApplication
             }
             return jumps;
         }
+        public static int viralAdvertising(int n)
+        {
+            var share = 5;
+            var likes = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                likes += (int)Math.Floor((double)share / 2);
+                share = (int)Math.Floor((double)share / 2) * 3;
+            }
+            return likes;
+        }
     }
 
 
