@@ -333,6 +333,18 @@ namespace TestApplication
             }
             return countOfFactors;
         }
+        public static string angryProfessor(int k, List<int> a)
+        {
+            a.Sort();
+            var earlyArr = 0;
+            var arr = a.ToArray();
+            while (arr[earlyArr] <= 0)
+            {
+                earlyArr++;
+            }
+            Console.WriteLine(earlyArr);
+            return earlyArr >= k ? "NO" : "YES";
+        }
     }
 
 
