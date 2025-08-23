@@ -317,6 +317,22 @@ namespace TestApplication
             Console.WriteLine(appCount);
             Console.WriteLine(oraCount);
         }
+        public static int findDigits(int n)
+        {
+            var charArr = n.ToString().ToCharArray();
+            var countOfFactors = 0;
+            foreach (var c in charArr)
+            {
+                Console.WriteLine(c);
+                var i = Convert.ToInt32(c.ToString());
+                Console.WriteLine(i);
+                if (i != 0 && n % i == 0)
+                {
+                    countOfFactors++;
+                }
+            }
+            return countOfFactors;
+        }
     }
 
 
