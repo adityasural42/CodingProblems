@@ -345,6 +345,27 @@ namespace TestApplication
             Console.WriteLine(earlyArr);
             return earlyArr >= k ? "NO" : "YES";
         }
+        public static int beautifulDays(int i, int j, int k)
+        {
+            var beauDays = 0;
+            for (int a = i; a <= j; a++)
+            {
+                var strNum = a.ToString();
+                var revStr = Reverse(strNum);
+                var revInt = Convert.ToInt32(revStr);
+                if ((Math.Abs(a - revInt)) % k == 0)
+                {
+                    beauDays++;
+                }
+            }
+            return beauDays;
+        }
+        public static string Reverse(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
     }
 
 
