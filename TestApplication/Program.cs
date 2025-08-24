@@ -366,6 +366,25 @@ namespace TestApplication
             Array.Reverse(charArray);
             return new string(charArray);
         }
+        public static int utopianTree(int n)
+        {
+            bool isSpring = true;
+            int height = 1;
+            for (int i = 0; i < n; i++)
+            {
+                if (isSpring)
+                {
+                    height *= 2;
+                    isSpring = false;
+                }
+                else
+                {
+                    height += 1;
+                    isSpring = true;
+                }
+            }
+            return height;
+        }
     }
 
 
