@@ -385,6 +385,21 @@ namespace TestApplication
             }
             return height;
         }
+        public static int pageCount(int n, int p)
+        {
+            if (p == 1 || p == n)
+            {
+                return 0;
+            }
+            if (p <= n / 2)
+            {
+                return p % 2 == 0 ? p / 2 : (p - 1) / 2;
+            }
+            else
+            {
+                return n % 2 == 0 ? ((n - p) + 1) / 2 : (n - p) / 2;
+            }
+        }
     }
 
 
