@@ -400,6 +400,28 @@ namespace TestApplication
                 return n % 2 == 0 ? ((n - p) + 1) / 2 : (n - p) / 2;
             }
         }
+        public static int sockMerchant(int n, List<int> ar)
+        {
+            var dict = new Dictionary<int, int>();
+            var pairCount = 0;
+            foreach (var a in ar)
+            {
+                if (dict.ContainsKey(a))
+                {
+                    dict[a]++;
+                    if (dict[a] % 2 == 0)
+                    {
+                        pairCount++;
+                    }
+                }
+                else
+                {
+                    dict.Add(a, 1);
+                }
+            }
+
+            return pairCount;
+        }
     }
 
 
