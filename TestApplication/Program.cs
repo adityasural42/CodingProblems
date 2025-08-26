@@ -422,6 +422,27 @@ namespace TestApplication
 
             return pairCount;
         }
+        public static void bonAppetit(List<int> bill, int k, int b)
+        {
+            var billArr = bill.ToArray();
+            var actualSum = 0;
+            for (int i = 0; i < billArr.Count(); i++)
+            {
+                if (i != k)
+                {
+                    actualSum += billArr[i];
+                }
+            }
+            actualSum = actualSum / 2;
+            if (actualSum >= b)
+            {
+                Console.WriteLine("Bon Appetit");
+            }
+            else
+            {
+                Console.WriteLine(b - actualSum);
+            }
+        }
     }
 
 
