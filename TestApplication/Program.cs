@@ -443,6 +443,47 @@ namespace TestApplication
                 Console.WriteLine(b - actualSum);
             }
         }
+        public static int migratoryBirds(List<int> arr)
+        {
+            var mostFrequent = 0;
+            var mfCount = 0;
+            var birdCount = new Dictionary<int, int>();
+            foreach (var a in arr)
+            {
+                if (birdCount.ContainsKey(a))
+                {
+                    birdCount[a]++;
+                }
+                else
+                {
+                    birdCount.Add(a, 1);
+                }
+            }
+            foreach (var bc in birdCount)
+            {
+                if (mostFrequent == 0)
+                {
+                    mostFrequent = bc.Key;
+                    mfCount = bc.Value;
+                }
+                else
+                {
+                    if (mfCount == bc.Value)
+                    {
+                        if (mostFrequent > bc.Key)
+                        {
+                            mostFrequent = bc.Key;
+                        }
+                    }
+                    else if (mfCount < bc.Value)
+                    {
+                        mostFrequent = bc.Key;
+                        mfCount = bc.Value;
+                    }
+                }
+            }
+            return mostFrequent;
+        }
     }
 
 
