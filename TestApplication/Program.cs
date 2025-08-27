@@ -484,6 +484,28 @@ namespace TestApplication
             }
             return mostFrequent;
         }
+        public static List<int> breakingRecords(List<int> scores)
+        {
+            int min = scores.First(), max = scores.First();
+            int minRecCount = 0, maxRecCount = 0;
+            var res = new List<int>();
+            foreach (var s in scores)
+            {
+                if (s < min)
+                {
+                    min = s;
+                    minRecCount++;
+                }
+                else if (s > max)
+                {
+                    max = s;
+                    maxRecCount++;
+                }
+            }
+            res.Add(maxRecCount);
+            res.Add(minRecCount);
+            return res;
+        }
     }
 
 
