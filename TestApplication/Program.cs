@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace TestApplication
 {
@@ -553,6 +554,40 @@ namespace TestApplication
                 rightDiagCounter--;
             }
             return Math.Abs(leftDiagSum - rightDiagSum);
+        }
+        public static string timeConversion(string s)
+        {
+            if (s.EndsWith("AM"))
+            {
+                if (s.StartsWith("12"))
+                {
+                    return "00" + s.Substring(2, 6);
+                }
+                return s.Substring(0, 8);
+            }
+            var TwelveHourTime = Convert.ToInt16(s.Substring(0, 2));
+            string tfTimeStr;
+            if (TwelveHourTime == 12)
+            {
+                return s.Substring(0, 8);
+            }
+            else
+            {
+                int tfTime = TwelveHourTime + 12;
+                if (tfTime < 10)
+                {
+                    tfTimeStr = "0" + tfTime;
+                }
+                else
+                {
+                    tfTimeStr = tfTime.ToString();
+                }
+
+            }
+            StringBuilder newTime = new StringBuilder();
+            newTime.Append(tfTimeStr);
+            newTime.Append(s.Substring(2, 6));
+            return newTime.ToString();
         }
     }
 
