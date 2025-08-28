@@ -527,6 +527,33 @@ namespace TestApplication
             }
             return "NO";
         }
+        public static int diagonalDifference(List<List<int>> arr)
+        {
+            var leftDiagCounter = 1;
+            var rightDiagCounter = arr.Count();
+            var innerCount = 1;
+            var leftDiagSum = 0;
+            var rightDiagSum = 0;
+            foreach (var a in arr)
+            {
+                foreach (var b in a)
+                {
+                    if (innerCount == leftDiagCounter)
+                    {
+                        leftDiagSum += b;
+                    }
+                    if (innerCount == rightDiagCounter)
+                    {
+                        rightDiagSum += b;
+                    }
+                    innerCount++;
+                }
+                innerCount = 1;
+                leftDiagCounter++;
+                rightDiagCounter--;
+            }
+            return Math.Abs(leftDiagSum - rightDiagSum);
+        }
     }
 
 
