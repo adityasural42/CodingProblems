@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace TestApplication
@@ -603,6 +604,33 @@ namespace TestApplication
                 maxSum += arr[i];
             }
             Console.WriteLine(minSum + " " + maxSum);
+        }
+        public static void plusMinus(List<int> arr)
+        {
+            float totalCount = arr.Count();
+            float zeroCount = 0;
+            float posCount = 0;
+            float negCount = 0;
+            foreach (var a in arr)
+            {
+                if (a == 0)
+                {
+                    zeroCount++;
+                }
+                else if (a > 0)
+                {
+                    posCount++;
+                }
+                else
+                {
+                    negCount++;
+                }
+            }
+            NumberFormatInfo setPrecision = new NumberFormatInfo();
+            setPrecision.NumberDecimalDigits = 6;
+            Console.WriteLine((posCount / totalCount).ToString("N", setPrecision));
+            Console.WriteLine((negCount / totalCount).ToString("N", setPrecision));
+            Console.WriteLine((zeroCount / totalCount).ToString("N", setPrecision));
         }
     }
 
