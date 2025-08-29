@@ -589,6 +589,21 @@ namespace TestApplication
             newTime.Append(s.Substring(2, 6));
             return newTime.ToString();
         }
+        public static void miniMaxSum(List<int> arr)
+        {
+            arr.Sort();
+            long minSum = 0;
+            long maxSum = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                minSum += arr[i];
+            }
+            for (int i = 4; i >= 1; i--)
+            {
+                maxSum += arr[i];
+            }
+            Console.WriteLine(minSum + " " + maxSum);
+        }
     }
 
 
