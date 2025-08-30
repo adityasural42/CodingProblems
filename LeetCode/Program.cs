@@ -57,5 +57,53 @@ namespace LeetCode
             }
             return head;
         }
+        public static string LongestCommonPrefix(string[] strs)
+        {
+            if (strs.Length == 0)
+            {
+                return "";
+            }
+            var prefix = strs[0];
+            foreach (var str in strs)
+            {
+                while (!str.StartsWith(prefix))
+                {
+                    prefix = prefix.Substring(0, prefix.Length - 1);
+                    if (prefix == "")
+                    {
+                        return "";
+                    }
+                }
+            }
+            return prefix;
+            // var shortestStrLen=strs[0].Length;
+            // for(int i=0;i<strs.Length;i++){
+            //     if(strs[i].Length<shortestStrLen){
+            //         shortestStrLen=strs[i].Length;
+            //     }
+            // }
+            // var counter=0;
+            // var preStr=new StringBuilder();
+            // var prefixBroke=false;
+            // while(counter<shortestStrLen){
+            //     char c='\0';
+            //     for(int i=0;i<strs.Length;i++){
+            //         if(c=='\0'){
+            //             c=strs[i][counter];
+            //         }
+            //         if(c!=strs[i][counter]){
+            //             prefixBroke=true;
+            //             break;
+            //         }
+            //     }
+            //     if(!prefixBroke){
+            //         preStr.Append(c);
+            //     }else{
+            //         break;
+            //     }
+            //     counter++;
+            // }
+            // return preStr.ToString();
+        }
     }
 }
