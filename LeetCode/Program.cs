@@ -111,5 +111,19 @@ namespace LeetCode
             var cargoDeck = n * n;
             return maxCont > cargoDeck ? cargoDeck : maxCont;
         }
+        public static int RemoveDuplicates(int[] nums)
+        {
+            var uniqueVals = new HashSet<int>();
+            int i = 0;
+            int j = 0;
+            while (i < nums.Length)
+            {
+                uniqueVals.Add(nums[i]);
+                i++;
+            }
+            uniqueVals.CopyTo(nums);
+            return uniqueVals.Count();
+
+        }
     }
 }
