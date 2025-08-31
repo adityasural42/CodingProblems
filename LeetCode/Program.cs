@@ -105,5 +105,11 @@ namespace LeetCode
             // }
             // return preStr.ToString();
         }
+        public static int MaxContainers(int n, int w, int maxWeight)
+        {
+            int maxCont = maxWeight / w;
+            var cargoDeck = n * n;
+            return maxCont > cargoDeck ? cargoDeck : maxCont;
+        }
     }
 }
