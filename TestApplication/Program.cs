@@ -632,6 +632,27 @@ namespace TestApplication
             Console.WriteLine((negCount / totalCount).ToString("N", setPrecision));
             Console.WriteLine((zeroCount / totalCount).ToString("N", setPrecision));
         }
+        public static int countingValleys(int steps, string path)
+        {
+            var valleysCount = 0;
+            var sealevel = 0;
+            foreach (var p in path)
+            {
+                if (p == 'U')
+                {
+                    if (sealevel == -1)
+                    {
+                        valleysCount++;
+                    }
+                    sealevel++;
+                }
+                else
+                {
+                    sealevel--;
+                }
+            }
+            return valleysCount;
+        }
     }
 
 
