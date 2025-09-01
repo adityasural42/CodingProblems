@@ -653,6 +653,22 @@ namespace TestApplication
             }
             return valleysCount;
         }
+        static List<int> compareTriplets(List<int> a, List<int> b)
+        {
+            var res = new List<int> { 0, 0 };
+            for (var i = 0; i < a.Count(); i++)
+            {
+                if (a[i] > b[i])
+                {
+                    res[0]++;
+                }
+                else if (a[i] < b[i])
+                {
+                    res[1]++;
+                }
+            }
+            return res;
+        }
     }
 
 
